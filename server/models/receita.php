@@ -1,11 +1,11 @@
 <?php
 
-class receita{
+class Receita{
     public int $id;
     public string $nome;
     public string $descricao;
     public int $tempo;
-    public object $ingredientes;
+    public array $ingredientes;
     public string $preparo;
     public string $data;
     public string $foto;
@@ -22,7 +22,6 @@ class receita{
     }
 
     public function tratarImagem():void{
-        header("Content-type: image");
         echo $this->foto;
         return;
 }

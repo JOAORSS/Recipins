@@ -1,25 +1,32 @@
 <?php
 
-class database extends PDO {
-        
-    private string $host  = "localhost";
-    private string $db = "recipins";
-    private string $user = "root";
-    private string $password = "";
-    protected PDO $database = new PDO("mysql:$this->host;dbname=$this->db", $this->user, $this->password);
-    public crud $CRUD;
+include_once '../server/controllers/crud.php';
 
-    function __construct($host, $db, $user, $password, $CRUD){
+class Database extends PDO {
         
-        parent::__construct($host, $db, $user, $password);
-        
-        $this->host = $host;
-        $this->db = $db ;
-        $this->user = $user;
-        $this->password = $password;
-        $this->$CRUD = $CRUD;
-        
+    private string $host;
+    private string $db;
+    private string $user;
+    private string $password;
+    public Crud $crud;
+    public PDO $database;
 
+    function __construct(){
+        
+        $this->host = "localhost";
+        $this->db = "recipins";
+        $this->user = "root";
+        $this->password = "";
+        $this->database = new PDO("mysql:host=$this->host;dbname=$this->db", $this->user, $this->password);
+        $this->crud = new Crud($this->database);
+
+    }
+
+    function getDatabase(){
+        return get_object_vars($this->database);
     }
     
 }
+
+
+?>

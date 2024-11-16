@@ -1,10 +1,10 @@
 <?php
 
-class usuario {
+class Usuario {
     public int $id;
     public string $nome;
     public string $email;
-    public string $foto;
+    public ?string $foto;
     public string $senha;
 
     function __construct($id, $nome, $email, $foto, $senha){
@@ -20,7 +20,6 @@ class usuario {
     }
 
     public function tratarImagem():void{
-            header("Content-type: image");
             echo $this->foto;
             return;
     }
