@@ -1,6 +1,7 @@
 <?php
 
-include_once '../server/controllers/crud.php';
+include_once '../server/controllers/recipeController.php';
+include_once '../server/controllers/userController.php';
 
 class Database extends PDO {
         
@@ -8,7 +9,8 @@ class Database extends PDO {
     private string $db;
     private string $user;
     private string $password;
-    public Crud $crud;
+    public Receitas $receitas;
+    public Usuarios $usuarios;
     public PDO $database;
 
     function __construct(){
@@ -18,7 +20,8 @@ class Database extends PDO {
         $this->user = "root";
         $this->password = "";
         $this->database = new PDO("mysql:host=$this->host;dbname=$this->db", $this->user, $this->password);
-        $this->crud = new Crud($this->database);
+        $this->receitas = new Receitas($this->database);
+        $this->usuarios = new Usuarios($this->database);
 
     }
 

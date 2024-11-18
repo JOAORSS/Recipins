@@ -18,39 +18,13 @@ include_once ("../utils/components.php");
 
     <?=callHeader()?>
 
-    <main class="main">
+    <main id="recipeHere" class="main">
         
-        <div class="main__receita">
-            <div class="main__receita__detalhes">
-            <h1><?= $info["nome"];  ?></h1>
-            <p>Tempo de preparo: <?= $info['tempo'] ?></p>
-            <p><?= $info["descricao"] ?> </p>
-            <h3>Ingredientes</h3>
-            <p>
-                <?= $info["ingredientes"] ?>
-            </p>
-            <h3>Modo de preparo:</h3>
-            <p>
-                <?= $info["preparo"]?>
-            </p>
-        </div>
-        <div class="main__receita__sobre">
-            <img src="https://static.stealthelook.com.br/wp-content/uploads/2022/08/receitas-com-cafe-nada-obvias-para-preparar-de-manha-smoothie-de-cafe-20220819175726.jpg">
-            <div class="main__receita__sobre__mark">
-                <img id="bookmark" src="../images/bookmark.svg" class="main__shart__footer__mark__book">
-                <img id="share" src="../images/share.svg" alt="compartilhar">
-            </div>
-            <div class="main__receita__sobre__chat">
-                <h3><strong>Comentários</strong></h3>
-                <div class="main__receita__sobre__chat__comment">
-                    <h4>João Vitor Raenke dos Santos</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 
-                    <h3>Sem comentários</h3>
-                </div>
-            </div>
-        </div>
-        </div>
+
+    </main>
     
+<script type="module" src="../app/recipeLoad.js"></script>
+
 </body>
 </html>
